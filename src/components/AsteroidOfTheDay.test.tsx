@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import AsteroidOfTheDay from '@/components/AsteroidOfTheDay';
+import { ImageProps } from 'next/image';
 
 // Mock next/image
 jest.mock('next/image', () => {
-  const MockImage = ({ src, alt, ...props }: { src: string; alt: string; [key: string]: any; }) => { // eslint-disable-line @typescript-eslint/no-explicit-any
+  const MockImage = ({ src, alt, ...props }: ImageProps) => {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={src} alt={alt} {...props} />;
+    return <img src={src as string} alt={alt as string} {...props} />;
   };
   MockImage.displayName = 'MockImage'; // Add display name
   return MockImage;

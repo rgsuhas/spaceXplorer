@@ -89,18 +89,26 @@ export async function fetchCloseApproachAsteroids() {
     }
     const data = await response.json();
 
-    const allAsteroids: { name: string; close_approach_date: string; miss_distance_km: string; }[] = [];
+    const allAsteroids: { name: string; close_approach_date: string; miss_distance_km: string; imageUrl: string | null; }[] = [];
+    const asteroidPromises: Promise<void>[] = [];
+
     for (const date in data.near_earth_objects) {
       data.near_earth_objects[date].forEach((asteroid: { name: string; close_approach_data: { close_approach_date: string; miss_distance: { kilometers: string; }; }[]; }) => {
         if (asteroid.close_approach_data && asteroid.close_approach_data.length > 0) {
-          allAsteroids.push({
-            name: asteroid.name,
-            close_approach_date: asteroid.close_approach_data[0].close_approach_date,
-            miss_distance_km: asteroid.close_approach_data[0].miss_distance.kilometers,
-          });
+          asteroidPromises.push((async () => {
+            const imageUrl = await fetchAsteroidImage(asteroid.name);
+            allAsteroids.push({
+              name: asteroid.name,
+              close_approach_date: asteroid.close_approach_data[0].close_approach_date,
+              miss_distance_km: asteroid.close_approach_data[0].miss_distance.kilometers,
+              imageUrl: imageUrl,
+            });
+          })());
         }
       });
     }
+
+    await Promise.all(asteroidPromises);
 
     return allAsteroids;
   } catch (error) {

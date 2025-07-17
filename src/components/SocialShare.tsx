@@ -26,11 +26,11 @@ const SocialShare: React.FC<SocialShareProps> = ({ shareText }) => {
   };
 
   return (
-    <div className="mt-8 p-4 bg-gray-100 rounded-lg shadow-md text-center">
-      <h2 className="text-2xl font-bold mb-2">Share This!</h2>
+    <div className="p-6 bg-white rounded-lg shadow-md text-center border border-gray-200 transition-all duration-300 ease-in-out transform hover:scale-102">
+      <h2 className="text-2xl font-bold text-gray-800 mb-4">Share This!</h2>
       <button
         onClick={handleShare}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
       >
         Share Fun Fact
       </button>

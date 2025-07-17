@@ -23,7 +23,7 @@ describe('FunFactSection', () => {
 
     render(<FunFactSection />);
 
-    expect(screen.getByText("Fun Fact!")).toBeInTheDocument();
+    expect(screen.getByText("🚀 Fun Fact!")).toBeInTheDocument();
     expect(screen.getByText("\"This is a test fun fact.\"")).toBeInTheDocument();
     expect(funFactsModule.getRandomFunFact).toHaveBeenCalledTimes(1);
   });
