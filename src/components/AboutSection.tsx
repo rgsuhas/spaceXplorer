@@ -6,7 +6,7 @@ const AboutSection: React.FC = () => {
       <h2 className="text-2xl font-bold mb-2">About This Project</h2>
       <p className="text-lg mb-2">
         This web application provides engaging and educational information about asteroids,
-        leveraging data from NASA's APIs.
+        leveraging data from NASA&apos;s APIs.
       </p>
       <p className="text-lg mb-2">
         It utilizes the <strong>NASA NeoWs (Near Earth Object Web Service) API</strong> for asteroid data

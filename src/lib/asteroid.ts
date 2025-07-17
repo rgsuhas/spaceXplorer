@@ -1,5 +1,34 @@
 import "server-only";
 
+export async function fetchAsteroidImage(query: string): Promise<string | null> {
+  const imageUrl = `https://images-api.nasa.gov/search?q=${encodeURIComponent(query)}&media_type=image`;
+
+  try {
+    const response = await fetch(imageUrl);
+    if (!response.ok) {
+      console.error(`NASA Image API error: ${response.statusText}`);
+      return null;
+    }
+    const data = await response.json();
+
+    if (data.collection.items.length > 0) {
+      // Find an image link that is not a video or audio preview
+      const imageItem = data.collection.items.find((item: { data: { media_type: string; }[]; links: { href: string; }[]; }) =>
+        item.data[0].media_type === 'image' && item.links && item.links.length > 0
+      );
+
+      if (imageItem) {
+        // Return the first image link found
+        return imageItem.links[0].href;
+      }
+    }
+    return null;
+  } catch (error) {
+    console.error("Failed to fetch asteroid image:", error);
+    return null;
+  }
+}
+
 export async function fetchAsteroidOfTheDay() {
   const NASA_API_KEY = process.env.NASA_API_KEY;
   if (!NASA_API_KEY) {
@@ -26,11 +55,14 @@ export async function fetchAsteroidOfTheDay() {
     const randomIndex = Math.floor(Math.random() * asteroidsToday.length);
     const randomAsteroid = asteroidsToday[randomIndex];
 
+    const imageUrl = await fetchAsteroidImage(randomAsteroid.name);
+
     return {
       name: randomAsteroid.name,
       nasa_jpl_url: randomAsteroid.nasa_jpl_url,
       is_potentially_hazardous_asteroid: randomAsteroid.is_potentially_hazardous_asteroid,
       estimated_diameter: randomAsteroid.estimated_diameter,
+      imageUrl: imageUrl, // Add the image URL here
     };
   } catch (error) {
     console.error("Failed to fetch asteroid of the day:", error);

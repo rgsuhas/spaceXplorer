@@ -7,7 +7,7 @@ const FunFactSection: React.FC = () => {
   return (
     <div className="mt-8 p-4 bg-gray-100 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-2">Fun Fact!</h2>
-      <p className="text-lg italic">"{funFact}"</p>
+      <p className="text-lg italic">&quot;{funFact}&quot;</p>
     </div>
   );
 };
