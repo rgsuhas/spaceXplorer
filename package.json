@@ -1,5 +1,5 @@
 {
-  "name": "asteroid-app",
+  "name": "spacexplorer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.537.0",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0"
