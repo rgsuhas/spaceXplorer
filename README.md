@@ -4,8 +4,8 @@ A minimal, interactive space exploration app. Discover SpaceX missions and space
 
 **Live Demo**: [https://spacexplorer.vercel.app/](https://spacexplorer.vercel.app/)
 
-![Homepage](img/image.png)
-![Space Missions](img/list.png)
+![Homepage](img/img1.png)
+![Space Missions](img/img2.png)
 
 ## Features
 
