@@ -193,8 +193,8 @@ const UpcomingMissionsSection: React.FC = () => {
         >
           <div className="border-t-2 border-gray-800 pt-12">
             <p className="text-gray-400 text-lg font-light max-w-3xl mx-auto leading-relaxed font-mono">
-              THESE MISSIONS REPRESENT THE NEXT PHASE OF SPACEX'S COMMITMENT 
-              TO REVOLUTIONIZING SPACE ACCESS AND ADVANCING HUMANITY'S PRESENCE IN SPACE.
+              THESE MISSIONS REPRESENT THE NEXT PHASE OF SPACEX&apos;S COMMITMENT 
+              TO REVOLUTIONIZING SPACE ACCESS AND ADVANCING HUMANITY&apos;S PRESENCE IN SPACE.
             </p>
             
             <div className="mt-8 flex items-center justify-center space-x-8">

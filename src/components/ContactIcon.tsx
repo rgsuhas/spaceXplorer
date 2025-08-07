@@ -36,7 +36,7 @@ const ContactIcon: React.FC = () => {
         delayChildren: 0.2
       }
     }
-  };
+  } as const;
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -44,12 +44,12 @@ const ContactIcon: React.FC = () => {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 400,
         damping: 25
       }
     }
-  };
+  } as const;
 
   return (
     <div className="fixed bottom-8 right-8 z-50">
@@ -62,7 +62,7 @@ const ContactIcon: React.FC = () => {
             exit="hidden"
             className="absolute bottom-20 right-0 space-y-4"
           >
-            {contacts.map((contact, index) => {
+            {contacts.map((contact) => {
               const IconComponent = contact.icon;
               return (
                 <motion.a

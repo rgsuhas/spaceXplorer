@@ -13,21 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SpaceX Mission Control - Launches & Space Exploration",
+  title: "SpaceXplorer - SpaceX Missions & Space Exploration",
   description: "Explore SpaceX missions, launches, and the future of space exploration. Track Falcon 9, Starship, Crew Dragon, and the journey to Mars with stunning visuals.",
   keywords: ["SpaceX", "launches", "rockets", "Mars", "Starship", "Falcon 9", "space exploration", "Elon Musk"],
-  authors: [{ name: "SpaceX Mission Control" }],
-  creator: "SpaceX Explorer",
-  publisher: "SpaceX Explorer",
+  authors: [{ name: "SpaceXplorer" }],
+  creator: "SpaceXplorer",
+  publisher: "SpaceXplorer",
+  icons: {
+    icon: [
+      { url: '/s-light.svg', media: '(prefers-color-scheme: light)' },
+      { url: '/s-dark.svg', media: '(prefers-color-scheme: dark)' }
+    ],
+    shortcut: '/s-light.svg',
+    apple: '/s-light.svg',
+  },
   openGraph: {
-    title: "SpaceX Mission Control - Launches & Space Exploration",
+    title: "SpaceXplorer - SpaceX Missions & Space Exploration",
     description: "Explore SpaceX missions, launches, and the future of space exploration with stunning visuals",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpaceX Mission Control - Launches & Space Exploration",
+    title: "SpaceXplorer - SpaceX Missions & Space Exploration",
     description: "Track SpaceX missions and the journey to Mars with real-time data and beautiful imagery",
   },
   robots: {

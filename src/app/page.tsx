@@ -1,4 +1,4 @@
-import { fetchLatestLaunch, fetchNextLaunch, fetchRecentLaunches, fetchRockets, fetchCompanyInfo } from '@/lib/spacex';
+import { fetchLatestLaunch, fetchNextLaunch, fetchRecentLaunches, fetchCompanyInfo } from '@/lib/spacex';
 import SpaceBackground from '@/components/SpaceBackground';
 import TeslaRoadster from '@/components/TeslaRoadster';
 import SpaceXHero from '@/components/SpaceXHero';
@@ -6,7 +6,6 @@ import SpaceXLaunchCard from '@/components/SpaceXLaunchCard';
 import SpaceXVehiclesSection from '@/components/SpaceXVehiclesSection';
 import UpcomingMissionsSection from '@/components/UpcomingMissionsSection';
 import ContactIcon from '@/components/ContactIcon';
-import type { SpaceXLaunch } from '@/lib/spacex-types';
 import { Rocket, Target, TrendingUp } from 'lucide-react';
 
 export default async function Home() {

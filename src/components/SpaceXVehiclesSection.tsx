@@ -193,7 +193,7 @@ const SpaceXVehiclesSection: React.FC = () => {
             <p className="text-gray-400 text-lg font-light max-w-3xl mx-auto leading-relaxed">
               Each vehicle represents a breakthrough in aerospace engineering, 
               designed to make space more accessible and ultimately enable 
-              humanity's expansion to other planets.
+              humanity&apos;s expansion to other planets.
             </p>
             
             <div className="mt-8 flex items-center justify-center space-x-8">

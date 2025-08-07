@@ -24,7 +24,7 @@ const SpaceXHero: React.FC<SpaceXHeroProps> = ({ latestLaunch, nextLaunch }) => 
         duration: 0.8
       }
     }
-  };
+  } as const;
 
   const itemVariants = {
     hidden: { y: 50, opacity: 0 },
@@ -32,12 +32,12 @@ const SpaceXHero: React.FC<SpaceXHeroProps> = ({ latestLaunch, nextLaunch }) => 
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 10
       }
     }
-  };
+  } as const;
 
   const floatingVariants = {
     float: {
@@ -45,7 +45,7 @@ const SpaceXHero: React.FC<SpaceXHeroProps> = ({ latestLaunch, nextLaunch }) => 
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };
@@ -59,14 +59,7 @@ const SpaceXHero: React.FC<SpaceXHeroProps> = ({ latestLaunch, nextLaunch }) => 
     }
   };
 
-  const getStatusBg = (status: string) => {
-    switch (status) {
-      case 'success': return 'from-green-600/20 to-emerald-600/20';
-      case 'failure': return 'from-red-600/20 to-orange-600/20';
-      case 'upcoming': return 'from-blue-600/20 to-purple-600/20';
-      default: return 'from-gray-600/20 to-gray-700/20';
-    }
-  };
+
 
   // Get the best available image
   const getHeroImage = (launch: SpaceXLaunch) => {
